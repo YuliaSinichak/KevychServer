@@ -28,6 +28,9 @@
     "prisma-studio": "docker exec server npx prisma studio"
   },
   "dependencies": {
+    "@nestjs/cli": "^10.4.5",
+    "@nestjs/schematics": "^10.0.0",
+    "@nestjs/testing": "^10.0.0",
     "@nestjs/common": "^10.0.0",
     "@nestjs/config": "^3.2.3",
     "@nestjs/core": "^10.0.0",
