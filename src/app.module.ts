@@ -12,17 +12,7 @@ import { RouteService } from './route/route.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
 @Module({
-  imports: [
-    AuthModule,
-    RouteModule,
-    ConfigModule.forRoot({ isGlobal: true }),
-    TypeOrmModule.forRoot({
-      type: 'postgres',
-      url: process.env.DATABASE_URL,
-      autoLoadEntities: true,
-      synchronize: true,
-    }),
-  ],
+  imports: [AuthModule, RouteModule, ConfigModule.forRoot({ isGlobal: true })],
   controllers: [AppController],
   providers: [AppService, PrismaService, AuthService, RouteService],
 })
