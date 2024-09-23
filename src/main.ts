@@ -7,11 +7,11 @@ async function bootstrap() {
 
   app.use(cookieParser());
   app.enableCors({
-    origin: '*',
+    origin: 'https://kevych-client.vercel.app',
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     credentials: true,
   });
 
-  await app.listen(process.env.DATA || 3000);
+  await app.listen(process.env.PORT || 3000);
 }
 bootstrap();
