@@ -6,13 +6,12 @@ import { NestExpressApplication } from '@nestjs/platform-express';
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
 
-  app.use(cookieParser());
-  app.set('trust proxy', 1);
   app.enableCors({
-    origin: '*',
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     credentials: true,
+    origin: ['https://kevych-client.vercel.app/', 'http://localhost:3000'],
   });
+
+  app.use(cookieParser());
 
   await app.listen(process.env.PORT || 5000);
 }
