@@ -9,7 +9,7 @@ async function bootstrap() {
   app.use(cookieParser());
   app.set('trust proxy', 1);
   app.enableCors({
-    origin: 'https://localhost:3001',
+    origin: 'http://localhost:3001/auth',
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     credentials: true,
   });
