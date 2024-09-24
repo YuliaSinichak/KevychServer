@@ -61,7 +61,12 @@ export class AuthController {
     }
 
     const jwt = await this.jwtService.signAsync({ id: user.id });
-    response.cookie('jwt', jwt, { httpOnly: true });
+    response.cookie('jwt', jwt, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'none',
+      maxAge: 24 * 60 * 60 * 1000, // 1 day
+    });
 
     return {
       message: 'success',

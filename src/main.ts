@@ -9,7 +9,7 @@ async function bootstrap() {
   app.use(cookieParser());
   app.set('trust proxy', 1);
   app.enableCors({
-    origin: 'http://localhost:3001/auth',
+    origin: 'https://kevych-client.vercel.app',
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     credentials: true,
   });
